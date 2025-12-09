@@ -2,7 +2,7 @@
 
 An interactive advent calendar with 15 days of data visualization challenges, from simple bar charts to data art!
 
-**Live Demo:** [View Calendar](https://yourusername.github.io/dataviz-advent-calendar/)
+**Live Demo:** [View Calendar](https://alenakot.github.io/dataviz-advent-calendar/)
 
 ## 📦 What's Inside
 
