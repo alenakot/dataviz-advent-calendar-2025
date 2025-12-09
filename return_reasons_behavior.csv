@@ -1,0 +1,12 @@
+Return_Reason,Percentage,Avg_Days_to_Return,Most_Affected_Category,Gen_Z_Percent,Millennial_Percent,Gen_X_Percent,Boomer_Percent,Preventable
+Size/Fit Issues,53,7,Clothing,62,58,45,32,Yes
+Damaged_Broken,25,3,Electronics,18,22,28,35,No
+Style_Color_Mismatch,15,10,Home_Decor,25,19,12,8,Yes
+Technical_Issues,12,5,Electronics,15,18,20,22,Partial
+Duplicate_Gift,18,4,Toys,8,12,15,28,No
+Wrong_Item_Sent,8,2,All_Categories,10,11,9,7,No
+Quality_Below_Expectations,20,8,Clothing,28,24,18,15,Yes
+Changed_Mind,22,12,All_Categories,35,28,18,12,Partial
+Item_Not_As_Described,24,6,Clothing,30,27,21,16,Yes
+Gift_Card_Usage,40,1,All_Categories,45,42,35,28,No
+Bracketing_Multiple_Sizes,51,5,Clothing,68,45,25,12,Yes

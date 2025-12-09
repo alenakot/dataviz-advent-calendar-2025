@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Days of Data Visualization 📊</title>
+    <style>
+        /* Christmas Tree Image */
+        .tree-img {
+            background-image: url('data:image/webp;base64,UklGRmAcAABXRUJQVlA4WAoAAAAwAAAAewEAlQIASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBIoQMAAAEPMP8REYJya22RRAeEJZYVAqEQynMm4JXTIhQ8BMCSBeb30AX//9Vf1f0GSxH9nwDD3Q6D/TNRwupEZKEaEXmoQUQBKRMRJThCqi8sUHvhgfqLA2i8CEDzRQSilwknvyKccmJh6omD6Zc5YIZ68yTA0GnUKp8lrcoZaVUXLEi7kAPpC/4hjIUDZF4ogBBavpOoU1lJOtU7oWfQlqxK/VacSuNxzFvxj4A+Tfm7r7oWEMZaQiC0ukEAfcfJ0a4Xy1tBrG5Fsb6VxOYWidG+FcoMXqjBdYYgNBiiEDEmXQoHWZHK4kQaXGfxIn+xHCLEGuGSRIYrPCRR4RqTFehMDs4LDKZDYMIRc+DLXJGvcCU9KhfxNTbL1tmcGoPNs001DjZiD1pkvgiXuApc1YO4miKWqQs4JYaAV+9gmgJBCULLdxZ1KBJJhypB+lkV2q05FfqteZZxa4cKUyS8JfRpys8qfvMRPmFGJsIdj8+rMG/NsYzH0VWxj8OwNk2SDlWTyFMkwj1liUMHI+GZpiKOaQhYJbqAQUvqRa6mxxeuyndw/QnX+DzX4HNcxG+ZioBhngKWiQQ9T5YIPFUi8XQJsiwk6jmyTOCoMomjyZBl6EKOYQr5vUzCYa9I0V6D63BDzG1NMb+TSTzsFLm4U+XSToPrcrQzAOwGAbq1jODXCsJxrYoQ1jpCWhtwE4Hw7BKhZQy/UuAqxnGlhhFWOtzAiCtTp7RCaBmEFgqKPataues0FH+dDjdQjutMlHAdQo0nWa10mQpDJwWuwjUce5X+HNyr8Rz8VaZexyvSLgOFmyiKxYvUx9GA0oekPwi6yPh4TM3sZ4q+ZTLv2Xyj0pswPhjxRX+jwov24I6LVMX8TRTF3EUykL0Jo5i5ynwM6WSoFU+6WuEyDea4TFXLnxT1MoyDsydGLXOdCZIWhnodJMKlhQYSLlThGsixUOAyiL+QAbErE+MnOLM6INJSV+nLUoM4liqEXyoQbilDeDi7ZCAM Wtpq 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');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #D4A5A5 0%, #C08B8B 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .day-card:nth-child(4n+1) {
+            background: linear-gradient(135deg, #A64253 0%, #8B3547 100%);
+            color: white;
+        }
+
+        .day-card:nth-child(4n+2) {
+            background: linear-gradient(135deg, #4A6B7C 0%, #3A5B6C 100%);
+            color: white;
+        }
+
+        .day-card:nth-child(4n+3) {
+            background: linear-gradient(135deg, #086522 0%, #075419 100%);
+            color: white;
+        }
+
+        .day-card:nth-child(3n)::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 30px;
+            height: 42px;
+            background-image: url('data:image/webp;base64,UklGRmAcAABXRUJQVlA4WAoAAAAwAAAAewEAlQIASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBIoQMAAAEPMP8REYJya22RRAeEJZYVAqEQynMm4JXTIhQ8BMCSBeb30AX//9Vf1f0GSxH9nwDD3Q6D/TNRwupEZKEaEXmoQUQBKRMRJThCqi8sUHvhgfqLA2i8CEDzRQSilwknvyKccmJh6omD6Zc5YIZ68yTA0GnUKp8lrcoZaVUXLEi7kAPpC/4hjIUDZF4ogBBavpOoU1lJOtU7oWfQlqxK/VacSuNxzFvxj4A+Tfm7r7oWEMZaQiC0ukEAfcfJ0a4Xy1tBrG5Fsb6VxOYWidG+FcoMXqjBdYYgNBiiEDEmXQoHWZHK4kQaXGfxIn+xHCLEGuGSRIYrPCRR4RqTFehMDs4LDKZDYMIRc+DLXJGvcCU9KhfxNTbL1tmcGoPNs001DjZiD1pkvgiXuApc1YO4miKWqQs4JYaAV+9gmgJBCULLdxZ1KBJJhypB+lkV2q05FfqteZZxa4cKUyS8JfRpys8qfvMRPmFGJsIdj8+rMG/NsYzH0VWxj8OwNk2SDlWTyFMkwj1liUMHI+GZpiKOaQhYJbqAQUvqRa6mxxeuyndw/QnX+DzX4HNcxG+ZioBhngKWiQQ9T5YIPFUi8XQJsiwk6jmyTOCoMomjyZBl6EKOYQr5vUzCYa9I0V6D63BDzG1NMb+TSTzsFLm4U+XSToPrcrQzAOwGAbq1jODXCsJxrYoQ1jpCWhtwE4Hw7BKhZQy/UuAqxnGlhhFWOtzAiCtTp7RCaBmEFgqKPataues0FH+dDjdQjutMlHAdQo0nWa10mQpDJwWuwjUce5X+HNyr8Rz8VaZexyvSLgOFmyiKxYvUx9GA0oekPwi6yPh4TM3sZ4q+ZTLv2Xyj0pswPhjxRX+jwov24I6LVMX8TRTF3EUykL0Jo5i5ynwM6WSoFU+6WuEyDea4TFXLnxT1MoyDsydGLXOdCZIWhnodJMKlhQYSLlThGsixUOAyiL+QAbErE+MnOLM6INJSV+nLUoM4liqEXyoQbilDeDi7ZCAM');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .day-card:nth-child(4n) {
+            background: white;
+            color: #333;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .day-card.next-available {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .day-card.locked {
+            opacity: 0.6;
+            cursor: not-allowed;
+            position: relative;
+        }
+        
+        .day-card.locked .day-title,
+        .day-card.locked .day-preview {
+            display: none;
+        }
+        
+        .day-card.locked::after {
+            content: '🎄';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            opacity: 0.2;
+        }
+        
+        .day-card.locked:nth-child(2n)::after {
+            content: '⛄';
+        }
+        
+        .day-card.locked:nth-child(3n)::after {
+            content: '🎁';
+        }
+        
+        .day-card.locked:nth-child(5n)::after {
+            content: '⭐';
+        }
+        
+        .day-card.locked:nth-child(7n)::after {
+            content: '✨';
+        }
+        
+        .day-card.locked:hover {
+            transform: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Future days - in a haze */
+        .day-card.future {
+            opacity: 0.5;
+            filter: grayscale(30%);
+        }
+
+        .day-card.future:hover {
+            opacity: 0.7;
+        }
+        
+        /* Special styling for day 15 - celebration */
+        .day-card:nth-child(15) {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #800020;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .day-card:nth-child(15) .day-number {
+            color: #800020;
+        }
+
+        .day-card.completed::after {
+            content: '✓';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            color: #086522;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .day-number {
+            display: inline-block;
+            color: #800020;
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .day-card:nth-child(4n) .day-number {
+            color: #800020;
+        }
+        
+        .day-card:nth-child(4n+1) .day-number {
+            color: white;
+        }
+        
+        .day-card:nth-child(4n+2) .day-number {
+            color: white;
+        }
+        
+        .day-card:nth-child(4n+3) .day-number {
+            color: white;
+        }
+
+        .day-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .day-preview {
+            font-size: 0.9em;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(128, 0, 32, 0.85);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: #FFF8F0;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            animation: scaleIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: #999;
+            line-height: 1;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: #555;
+        }
+
+        .modal-header {
+            margin-bottom: 25px;
+        }
+
+        .modal-day-number {
+            display: inline-block;
+            background: #800020;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            font-size: 2em;
+            color: #800020;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .difficulty.easy {
+            background: #086522;
+            color: white;
+        }
+
+        .difficulty.medium {
+            background: #4A6B7C;
+            color: white;
+        }
+
+        .difficulty.hard {
+            background: #800020;
+            color: white;
+        }
+
+        .task-section {
+            margin: 25px 0;
+        }
+
+        .task-section h3 {
+            color: #800020;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .task-section p, .task-section ul {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .task-section ul {
+            padding-left: 25px;
+        }
+
+        .task-section li {
+            margin-bottom: 8px;
+        }
+
+        .tips-box {
+            background: #FFF;
+            border-left: 4px solid #086522;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .complete-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .complete-btn:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .complete-btn.completed {
+            background: #086522;
+        }
+        
+        .complete-btn.completed:hover {
+            background: #075419;
+        }
+
+        .skip-btn {
+            background: transparent;
+            color: #6c757d;
+            border: 1px solid #dee2e6;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .skip-btn:hover {
+            background: #f8f9fa;
+            color: #495057;
+            border-color: #adb5bd;
+        }
+
+        .progress-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            
+        }
+        
+        .progress-section h2 {
+            color: #800020;
+            font-weight: 600;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            background: #F0E6E6;
+            height: 32px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #086522;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
+            .modal-title {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Music button */
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+            background: #FFF8F0;
+        }
+
+        .music-btn::before {
+            content: '🎵';
+        }
+
+        /* Reset progress button */
+        .reset-progress-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            cursor: pointer;
+            font-size: 0.85em;
+            color: #666;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-weight: 500;
+        }
+
+        .reset-progress-btn:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: #800020;
+            border-color: #800020;
+        }
+    </style>
+</head>
+<body>
+    <!-- Music Button -->
+    <a href="https://www.youtube.com/watch?v=QR4vDXJ72B0" target="_blank" class="music-btn" title="🎵 Holiday atmosphere"></a>
+
+    <!-- Reset Progress Button -->
+    <button class="reset-progress-btn" onclick="resetProgress()" title="Reset all progress">🔄 Reset Progress</button>
+
+    <div class="container">
+        <header>
+            <h1>New Year Data Viz Calendar</h1>
+            <p class="subtitle">🎄 15 Days Until New Year</p>
+        </header>
+
+        <div class="progress-section">
+            <h2>Your Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill">0%</div>
+            </div>
+            <p id="progressText" style="font-size: 1em; font-weight: 500; color: #555;">Tasks completed: 0 out of 15</p>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid"></div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <div class="modal-day-number" id="modalDayNumber"></div>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <span class="difficulty" id="modalDifficulty" style="display: none;"></span>
+            </div>
+            <div id="modalBody"></div>
+            <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">
+                Mark as Complete
+            </button>
+            <button class="skip-btn" id="skipBtn" onclick="skipDay()" style="display: none;">
+                Skip →
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const tasks = [
+            {
+                day: 1,
+                title: "🎵 Christmas & New Year Songs",
+                preview: "Create a bar chart of the top 10 most popular Christmas songs",
+                difficulty: "easy",
+                description: "Dataset: <a href='datasets/christmas_new_year_songs.csv' download>christmas_new_year_songs.csv</a> (30 songs). Create a bar chart showing the top 10 most popular Christmas songs by number of streams.",
+                task: "Visualize the top 10 songs by streams using a horizontal or vertical bar chart.",
+                tips: [
+                    "Horizontal vs vertical: If labels are long (song names, people's names) → use horizontal bar chart for better readability",
+                    "Sorting matters: Always sort from highest to lowest (or vice versa), never leave in random order",
+                    "Start Y-axis at zero: For bar charts always start at 0 to avoid distorting proportions",
+                    "Color = meaning: Use color only when it means something (Christmas vs New Year), not just for decoration"
+                ],
+                bonus: "Try comparing song popularity across different decades (1940s vs 2010s)."
+            },
+            {
+                day: 2,
+                title: "💡 Theory: Chart Types Guide",
+                preview: "Which chart for which data? Learn visualization types",
+                difficulty: "theory",
+                description: `There are helpful websites that guide you in choosing the right chart type:<br><br>
+                    • <a href='https://www.data-to-viz.com/' target='_blank'>From Data to Viz</a><br>
+                    • <a href='https://datavizcatalogue.com/' target='_blank'>The Data Visualisation Catalogue</a><br>
+                    • <a href='https://www.juiceanalytics.com/chartchooser' target='_blank'>Chart Chooser by Juice Analytics</a><br>
+                    • <a href='https://policyviz.com/2014/09/09/graphic-continuum/' target='_blank'>Graphic Continuum</a>`,
+                task: `Learn the main chart types:<br><br>
+                    • <strong>Bar chart</strong> - for comparing categories (what we did yesterday!)<br>
+                    • <strong>Line chart</strong> - for trends over time<br>
+                    • <strong>Scatter plot</strong> - for correlations and relationships<br>
+                    • <strong>Pie/Donut chart</strong> - for proportions (use carefully!)<br>
+                    • <strong>Heatmap</strong> - for data patterns<br>
+                    • <strong>Treemap</strong> - for hierarchical data<br><br>
+                    
+                    <strong>🛠️ Visualization Tools:</strong><br><br>
+                    <strong>No-code tools:</strong><br>
+                    • <a href='https://flourish.studio/' target='_blank'>Flourish</a> - beautiful interactive charts<br>
+                    • <a href='https://www.datawrapper.de/' target='_blank'>Datawrapper</a> - quick charts for journalism<br>
+                    • <a href='https://www.rawgraphs.io/' target='_blank'>RAWGraphs</a> - unusual visualization types<br>
+                    • <a href='https://lookerstudio.google.com/' target='_blank'>Looker Studio</a> (Google Data Studio) - dashboards<br><br>
+                    
+                    <strong>Desktop applications:</strong><br>
+                    • <a href='https://public.tableau.com/' target='_blank'>Tableau Public</a> - powerful viz tool<br>
+                    • <a href='https://powerbi.microsoft.com/' target='_blank'>Power BI</a> - business intelligence from Microsoft<br><br>
+                    
+                    <strong>Code (Python/R/JavaScript):</strong><br>
+                    • Python: matplotlib, seaborn, plotly, altair<br>
+                    • R: ggplot2<br>
+                    • JavaScript: <a href='https://d3js.org/' target='_blank'>D3.js</a>, <a href='https://observablehq.com/' target='_blank'>Observable</a><br><br>
+                    
+                    <strong>Design:</strong><br>
+                    • Figma + chart plugins<br>
+                    • Adobe Illustrator<br><br>
+                    
+                    Take data from Day 1 (songs) and think: Which chart will show popularity changes over years? How to visualize genre distribution? How to show the relationship between release year and streams?`,
+                tips: [
+                    "Each chart type answers a specific question: 'what is bigger?' (bar), 'how does it change?' (line), 'is there a relationship?' (scatter)",
+                    "Pie charts work only for 2-5 categories, otherwise use a bar chart",
+                    "Heatmap is great for showing patterns in large data tables (temperatures, calendars, matrices)",
+                    "Treemap helps show hierarchy and sizes at the same time (countries→regions→cities)",
+                    "Remember the rule: first the question ('what do I want to show?'), then the chart"
+                ],
+                bonus: "Open From Data to Viz and study the decision tree for choosing visualization types. <strong>Bonus challenge:</strong> Choose your favorite chart type and find 3 examples of its use."
+            },
+            {
+                day: 3,
+                title: "🍽️ Traditional Holiday Dishes",
+                preview: "Create a treemap of traditional holiday dishes from around the world",
+                difficulty: "medium",
+                description: "Dataset: <a href='datasets/traditional_holiday_dishes.csv' download>traditional_holiday_dishes.csv</a> (60 countries). Create a treemap showing traditional holiday dishes by country and region.",
+                task: "Visualize holiday food traditions from different countries using a treemap. Show hierarchy: Region → Country → Dish.",
+                tips: [
+                    "Treemap = boxes within boxes: Perfect for showing categories within categories (continents → countries → dishes)",
+                    "Size matters: Make box size proportional to something meaningful (population, number of dishes, popularity)",
+                    "Color by category: Use color for regions/continents, not for individual dishes - too many colors confuse",
+                    "Labels are tricky: Don't force labels on tiny boxes - show only main categories",
+                    "Interactive is better: For treemaps, interactive versions work better than static images"
+                ],
+                bonus: "Find which region has the most diverse holiday food traditions. Bonus: Compare your country's traditions with neighboring countries."
+            },
+            {
+                day: 4,
+                title: "🎨 Theory: Color in Data Viz",
+                preview: "How to choose colors for your visualizations",
+                difficulty: "theory",
+                description: "Learn the basics of color theory for data visualization and color accessibility.",
+                task: `<strong>Holiday color palettes for inspiration:</strong><br><br>
+                    🎄 <strong>Classic Christmas:</strong> #C41E3A (red), #165B33 (green), #FFD700 (gold)<br>
+                    ❄️ <strong>Winter elegance:</strong> #1E3A8A (blue), #60A5FA (light blue), #E5E7EB (silver gray)<br>
+                    ⭐ <strong>Warm gold:</strong> #78350F (brown), #F59E0B (amber), #FEF3C7 (cream)<br>
+                    🌟 <strong>Nordic minimalism:</strong> #111827 (dark gray), #F3F4F6 (light gray), #DC2626 (red accent)<br><br>
+                    <strong>Types of color schemes:</strong><br>
+                    • Sequential (gradient) - for numerical values (light to dark)<br>
+                    • Categorical (different colors) - for categories (countries, types)<br>
+                    • Diverging (from-to) - for deviations (cold ← normal → hot)<br><br>
+                    <strong>Tools for color selection:</strong><br>
+                    • <a href='https://colorbrewer2.org/' target='_blank'>ColorBrewer</a> - colorblind-safe palettes<br>
+                    • <a href='https://coolors.co/' target='_blank'>Coolors.co</a> - palette generator<br>
+                    • <a href='https://color.adobe.com/' target='_blank'>Adobe Color</a> - create palettes<br>
+                    • <a href='https://projects.susielu.com/viz-palette' target='_blank'>Viz Palette</a> - specifically for data viz<br><br>
+                    
+                    <strong>🌟 Experts for Inspiration:</strong><br>
+                    • <a href='https://flowingdata.com/' target='_blank'>Nathan Yau</a> - FlowingData, practical viz examples<br>
+                    • <a href='https://blog.datawrapper.de/colorguide/' target='_blank'>Lisa Charlotte Rost</a> - Datawrapper, "Your Friendly Guide to Colors"`,
+                tips: [
+                    "Use ColorBrewer - all palettes are colorblind-safe",
+                    "Check contrast on WebAIM Contrast Checker",
+                    "Don't rely only on color - add textures, patterns, labels",
+                    "Sequential for numbers, Categorical for categories, Diverging for deviations",
+                    "Holiday colors work, but remember accessibility!"
+                ],
+                bonus: "Take any of your visualizations and recreate the color palette: 1) festive version 2) colorblind-friendly 3) monochrome."
+            },
+            {
+                day: 5,
+                title: "💰 American Holiday Spending",
+                preview: "Stacked area chart of Americans' gift spending",
+                difficulty: "medium",
+                description: "Dataset: <a href='https://data.world/makeovermonday/2022w52' target='_blank'>Average_holiday_Spending_by_Americans.xlsx</a> (2004-2021) on data.world. Create a stacked area chart or combination chart to show the evolution of Americans' gift spending by categories: Family, Friends, Coworkers, Other.",
+                task: "Visualize how Americans' holiday gift spending changed from 2004 to 2021. Show breakdown by recipient categories.",
+                tips: [
+                    "Stacked areas bottom to top: Place the most important/stable category at the bottom (near X-axis) - it's easier to read",
+                    "Annotations = context: Add explanations for sharp changes in the chart (crisis, pandemic, new laws)",
+                    "Line + Bars: When you need to show parts AND whole, use a combination chart",
+                    "Trend lines: Add trend lines to show the overall direction through the noise",
+                    "Color by importance: Highlight the most important category with a bright color, others - muted"
+                ],
+                bonus: "Insight to find: Family always ~75% of budget, even in crisis! Bonus: <a href='https://data.world/makeovermonday/2024w52-how-does-our-spending-change-in-december' target='_blank'>UK December Spending</a> for comparison.<br><br><strong>🌟 Experts for Inspiration:</strong><br>• <a href='https://www.edwardtufte.com/' target='_blank'>Edward Tufte</a> - data viz pioneer, \"data-ink ratio\"<br>• <a href='https://www.cs.ubc.ca/~tmm/' target='_blank'>Tamara Munzner</a> - \"Visualization Analysis and Design\"<br>• <a href='http://www.thefunctionalart.com/' target='_blank'>Alberto Cairo</a> - \"The Truthful Art\", \"How Charts Lie\""
+            },
+            {
+                day: 6,
+                title: "🎨 Data Art",
+                preview: "Hand-drawn visualization of personal data",
+                difficulty: "medium",
+                description: "Dear Data - a project by two designers (Giorgia Lupi & Stefanie Posavec) who spent a year sending each other postcards with hand-drawn visualizations of their personal data.",
+                task: `Collect data about your day (Dec 17-22):<br>
+                    • How many times did you smile?<br>
+                    • How many cups of coffee/tea did you drink?<br>
+                    • How much time on social media?<br>
+                    • How many holiday songs did you hear?<br><br>
+                    Draw a simple visualization by hand (pencil, markers) on paper or tablet.<br><br>
+                    <strong>Resources for inspiration:</strong><br>
+                    • <a href='http://www.dear-data.com/' target='_blank'>Dear Data</a> - original project<br>
+                    • <a href='http://www.datasketch.es/' target='_blank'>Data Sketches</a> - Nadieh Bremer & Shirley Wu<br>
+                    • <a href='https://datavisualizationstudio.com/diaryemotions/en' target='_blank'>Diary of Emotions</a> - Natalia Kiseleva<br>
+                    • <a href='http://giorgialupi.com/' target='_blank'>Giorgia Lupi</a> - portfolio<br>
+                    • <a href='http://www.stefanieposavec.com/' target='_blank'>Stefanie Posavec</a> - works<br><br>
+                    <strong>🌟 Data Art Artists for Inspiration:</strong><br>
+                    • <a href='http://giorgialupi.com/' target='_blank'>Giorgia Lupi</a> - Data Humanism, Dear Data<br>
+                    • <a href='https://www.visualcinnamon.com/' target='_blank'>Nadieh Bremer</a> - Visual Cinnamon, creative viz<br>
+                    • <a href='https://truth-and-beauty.net/' target='_blank'>Moritz Stefaner</a> - Truth & Beauty, poetic data<br>
+                    • <a href='http://www.aaronkoblin.com/' target='_blank'>Aaron Koblin</a> - Flight Patterns, crowd-sourced art<br>
+                    • <a href='http://www.bewitched.com/' target='_blank'>Fernanda Viégas & Martin Wattenberg</a> - Wind Map, pioneers`,
+                tips: [
+                    "Create a legend: Even in hand-drawn viz, explain what symbols/colors mean",
+                    "Consistency matters: If Monday = red, all Mondays should be red",
+                    "Personal data = personal stories: Your data is unique, visualization should reflect YOUR life",
+                    "Constraints breed creativity: Limitations (only 3 colors, only circles) help create more interesting work",
+                    "Sketch first: First a pencil sketch, then details"
+                ],
+                bonus: "Style examples: each day = flower (petals = events), timeline with icons, radial chart."
+            },
+            {
+                day: 7,
+                title: "🌡️ New Year Temperatures",
+                preview: "Heatmap of average temperatures on New Year's Day",
+                difficulty: "medium",
+                description: "Dataset: <a href='datasets/new_year_temperatures.csv' download>new_year_temperatures.csv</a> (50 cities). Create a heatmap showing average temperatures on January 1st across different cities.",
+                task: "Visualize temperatures on New Year's Day for 50 cities around the world. Show geographical patterns.",
+                tips: [
+                    "Heatmap colors: Use a sequential palette (one color, varying intensity) for one dimension",
+                    "Diverging for temperatures: Blue (cold) ← White (0°C) → Red (hot) - intuitively clear",
+                    "Geographic data = maps: If you have coordinates, use a map instead of a table - patterns are instantly visible",
+                    "Sort heatmap: Sort rows/columns to make patterns visible (by geography, by temperature)",
+                    "Don't forget the legend: For heatmaps, a legend is critical - without it, colors mean nothing"
+                ],
+                experts: "• <a href='https://www.storytellingwithdata.com/' target='_blank'>Cole Nussbaumer Knaflic</a> - Storytelling with Data<br>• <a href='https://www.visualisingdata.com/' target='_blank'>Andy Kirk</a> - Visualising Data<br>• <a href='https://policyviz.com/' target='_blank'>Jon Schwabish</a> - PolicyViz podcast<br>• <a href='https://www.linkedin.com/in/nastengraph/' target='_blank'>Anastasiya Kuznetsova</a> - Tableau & BI dashboards",
+                bonus: "Try showing temperature changes over years - is there a warming trend? Want data for your city? Use <a href='https://en.climate-data.org/' target='_blank'>Climate-Data.org</a>."
+            },
+            {
+                day: 8,
+                title: "🔍 Theory: Where to Find Data",
+                preview: "Data sources for your projects",
+                difficulty: "theory",
+                description: "Learn to find interesting data for your visualizations.",
+                task: `<strong>📚 Ready-made datasets:</strong><br>
+                    • <a href='https://www.kaggle.com/datasets' target='_blank'>Kaggle</a> - competitions + datasets<br>
+                    • <a href='https://data.world/' target='_blank'>data.world</a> - open data (Makeover Monday)<br>
+                    • <a href='https://datasetsearch.research.google.com/' target='_blank'>Google Dataset Search</a><br>
+                    • <a href='https://github.com/awesomedata/awesome-public-datasets' target='_blank'>Awesome Public Datasets</a> - curated list<br><br>
+                    
+                    <strong>🏛️ Government & Organizations:</strong><br>
+                    • <a href='https://data.gov/' target='_blank'>US Government Open Data</a><br>
+                    • <a href='https://data.europa.eu/' target='_blank'>European Union Open Data</a><br>
+                    • <a href='https://data.worldbank.org/' target='_blank'>World Bank Data</a><br>
+                    • <a href='https://data.un.org/' target='_blank'>UN Data</a><br>
+                    • <a href='https://www.who.int/data' target='_blank'>WHO Data</a><br><br>
+                    
+                    <strong>🎯 Specialized sources:</strong><br>
+                    • <a href='https://www.sports-reference.com/' target='_blank'>Sports Reference</a> - sports statistics<br>
+                    • <a href='https://www.imdb.com/interfaces/' target='_blank'>IMDb Datasets</a> - movies & TV<br>
+                    • <a href='https://developer.spotify.com/' target='_blank'>Spotify API</a> - music data<br>
+                    • <a href='https://openweathermap.org/api' target='_blank'>OpenWeather API</a> - weather data<br><br>
+                    
+                    <strong>📊 Your own data:</strong><br>
+                    • Fitness trackers (Strava, Apple Health, Fitbit)<br>
+                    • Social media exports (Twitter, Instagram)<br>
+                    • Bank statements (spending patterns)<br>
+                    • Browser history, music listening history`,
+                tips: [
+                    "Start simple: Your first viz doesn't need big data - 20-30 rows is enough to learn",
+                    "Clean data = happy life: Spend time on data cleaning - 80% of work is preparing data, 20% visualization",
+                    "Check data quality: Look at min/max values, missing values, outliers before visualizing",
+                    "CSV is your friend: Most tools work best with CSV format - it's simple and universal",
+                    "API = fresh data: If you need current data (weather, stocks) - learn to use APIs"
+                ],
+                bonus: "Find a dataset on a topic you're interested in and create a simple bar or line chart. Want to explore Google Trends? Here's an example with holiday dishes: <a href='https://trends.google.com/trends/explore?date=today%205-y&q=Turkey%20Soup,Mashed%20Potatoes,Hot%20Chocolate,olivier%20salad' target='_blank'>Holiday food trends</a>"
+            },
+            {
+                day: 9,
+                title: "📰 Theory: Infographics",
+                preview: "What makes a good infographic?",
+                difficulty: "theory",
+                description: "Infographic is a visual representation of information, data, or knowledge that combines text, graphics, and design to quickly and clearly communicate complex ideas.",
+                task: `<strong>Key principles of good infographics:</strong><br>
+                    1. <strong>One clear message</strong> - focus on one main idea<br>
+                    2. <strong>Visual hierarchy</strong> - most important things are bigger/brighter<br>
+                    3. <strong>Data + storytelling</strong> - numbers alone are not enough<br>
+                    4. <strong>Simple design</strong> - don't overload with decorations<br>
+                    5. <strong>Consistent style</strong> - one font family, coordinated colors<br><br>
+                    
+                    <strong>Infographic examples for inspiration:</strong><br>
+                    • <a href='https://flourish.studio/blog/all-i-want-christmas-mariah-billboard-data/' target='_blank'>All I Want for Christmas - Mariah Carey</a> (Flourish Studio)<br>
+                    • <a href='https://www.accuweather.com/en/winter-weather/will-it-snow-on-christmas-these-cities-have-the-best-chance/1719644' target='_blank'>White Christmas Probability</a> (AccuWeather)<br>
+                    • <a href='https://piktochart.com/blog/12-christmas-infographics/' target='_blank'>12 Christmas Infographics</a> (Piktochart)<br>
+                    • <a href='https://www.pinterest.com/ideas/christmas-infographic-design/952308099847/' target='_blank'>Pinterest Christmas Infographics</a><br>
+                    • <a href='https://informationisbeautiful.net/' target='_blank'>Information is Beautiful</a><br><br>
+                    
+                    Study these examples and identify: What makes them effective? How do they combine data with design?`,
+                tips: [
+                    "Tell a story: Good infographic = data + narrative. Lead the viewer through the information",
+                    "Use icons wisely: Icons help understanding, but don't overuse them",
+                    "White space is important: Don't be afraid of empty space - it helps information breathe",
+                    "Sources matter: Always indicate where the data comes from",
+                    "Mobile-friendly: Remember that many will view on phones - make text readable"
+                ],
+                bonus: "Create a simple infographic about your city or hobby. Use real data and add visual elements."
+            },
+            {
+                day: 10,
+                title: "🎬 Christmas Movies Ratings",
+                preview: "Scatter plot: IMDb vs audience ratings",
+                difficulty: "medium",
+                description: "Dataset: <a href='datasets/christmas_movies_ratings.csv' download>christmas_movies_ratings.csv</a> (50 movies). Create a scatter plot comparing IMDb ratings with audience scores.",
+                task: "Visualize the relationship between critic ratings (IMDb) and audience ratings for Christmas movies. Are they correlated?",
+                tips: [
+                    "Scatter plot = looking for relationships: Each point is one observation (movie, person, country)",
+                    "Trend line helps: Add a linear trend line to show if there's correlation",
+                    "Label interesting points: Highlight outliers - movies that critics loved but audience didn't (or vice versa)",
+                    "Size = third dimension: Make point size proportional to something (box office, year, duration)",
+                    "Interactive beats static: For scatter plots with many points, interactive versions work better"
+                ],
+                bonus: "Find which movie has the biggest difference between critic and audience ratings. Create a 'controversial movies' list!"
+            },
+            {
+                day: 11,
+                title: "🛷 Holiday Activities Popularity",
+                preview: "Dot plot or lollipop chart for comparing activities",
+                difficulty: "easy",
+                description: "Dataset: <a href='datasets/holiday_activities.csv' download>holiday_activities.csv</a> (20 activities). Create a dot plot or lollipop chart showing popularity of different holiday activities.",
+                task: "Visualize which holiday activities are most popular. Compare across age groups or countries.",
+                tips: [
+                    "Dot plot = cleaner alternative to bar chart: Use when you want to reduce visual clutter",
+                    "Lollipop chart = dot plot with stems: Looks modern and saves ink/pixels",
+                    "Sort by value: Always sort from highest to lowest to make comparison easier",
+                    "Group comparisons: Use different colors for different groups (kids vs adults, US vs Europe)",
+                    "Highlight the winner: Make the top choice stand out with a different color"
+                ],
+                bonus: "Compare your country's favorite activities with global trends. Any surprises?"
+            },
+            {
+                day: 12,
+                title: "🎁 Gift Exchange Network",
+                preview: "Network diagram or chord diagram",
+                difficulty: "hard",
+                description: "Dataset: <a href='datasets/gift_exchange.csv' download>gift_exchange.csv</a> (family gift exchange data). Create a network diagram showing who gives gifts to whom.",
+                task: "Visualize gift exchange relationships in a family or friend group. Show the flow of gifts.",
+                tips: [
+                    "Network viz = connections matter: Use when relationships between items are important",
+                    "Node size = importance: Make nodes bigger based on number of connections",
+                    "Arrow direction: Show who gives to whom - direction matters in network diagrams",
+                    "Avoid spaghetti: Too many connections = unreadable. Consider filtering less important links",
+                    "Tools help: Use specialized tools like Gephi, NodeXL, or Flourish for complex networks"
+                ],
+                bonus: "Find who is the most generous gift-giver and who receives the most gifts!"
+            },
+            {
+                day: 13,
+                title: "🎨 Physical Data Art",
+                preview: "Create a physical visualization using craft materials",
+                difficulty: "medium",
+                description: "Move beyond screens! Create a physical data visualization using paper, yarn, LEGO, or any craft materials.",
+                task: `Choose your data (holiday expenses, daily mood, temperature, etc.) and create a physical visualization. Examples:<br>
+                    • Paper chain where each link = one day/event<br>
+                    • LEGO tower where height = value<br>
+                    • Yarn woven pattern based on data<br>
+                    • Origami pieces for categories<br><br>
+                    
+                    <strong>Exhibitions and examples for inspiration:</strong><br>
+                    • <a href='https://www.nathaliemiebach.com/' target='_blank'>Nathalie Miebach</a> - weather data sculptures<br>
+                    • <a href='https://www.adriensegal.com/' target='_blank'>Adrien Segal</a> - wooden water data sculptures<br>
+                    • <a href='https://perpetual-plastic.net/' target='_blank'>Perpetual Plastic</a> - sculpture from beach plastic<br>
+                    • <a href='https://www.lorenmadsen.com/' target='_blank'>Loren Madsen</a> - carved wood sculptures<br>
+                    • <a href='https://designingnumbers.tilda.ws/' target='_blank'>Designing Numbers</a> - material data visualization<br>
+                    • <a href='https://dataphys.org/wiki/' target='_blank'>DataPhys.org</a> - catalog of physical visualizations<br>
+                    • <a href='https://www.datavisualizationsociety.org/' target='_blank'>Data Visualization Society</a><br>
+                    • <a href='https://informationisbeautiful.net/' target='_blank'>Information is Beautiful</a>`,
+                tips: [
+                    "Material = meaning: Choose material consciously (wood = nature, metal = technology)",
+                    "Tactile experience: Physical visualization can be touched - use this!",
+                    "Scale matters: Think about proportions - how will height/size represent values?",
+                    "Photo your work: Document the process and final result to share online",
+                    "Temporary is okay: Not all physical viz need to be permanent - snow, sand, food all work!"
+                ],
+                bonus: "Share your physical data art with #DataVizAdvent2025 and #PhysicalDataViz"
+            },
+            {
+                day: 14,
+                title: "🎵 Music Playlist Analysis",
+                preview: "Multi-chart dashboard combining different viz types",
+                difficulty: "hard",
+                description: "Dataset: <a href='https://www.youtube.com/watch?v=aAkMkVFwAoo&list=PLw-VjHDlEOgs658kAHR_LAaILBXb-s6Q5' target='_blank'>YouTube Playlist</a> with holiday songs. Analyze and create a dashboard with multiple charts.",
+                task: "Create a comprehensive dashboard analyzing the holiday playlist. Include: 1) Songs by decade (bar), 2) Duration distribution (histogram), 3) Artist frequency (treemap or bar), 4) Your favorite songs (highlight).",
+                tips: [
+                    "Dashboard = multiple views: Combine different chart types to tell a complete story",
+                    "Consistent design: Use the same colors, fonts, and style across all charts",
+                    "Layout matters: Most important chart goes top-left (where eyes look first)",
+                    "Filter connections: In interactive dashboards, let users filter all charts at once",
+                    "Don't overdo it: 3-5 charts is enough - more creates clutter"
+                ],
+                bonus: "Add your personal rating to each song and visualize which decades you prefer most!"
+            },
+            {
+                day: 15,
+                title: "Happy New Year! 🎉",
+                preview: "You made it through the whole journey — that's amazing!",
+                difficulty: "celebration",
+                description: "Congratulations! You completed all 15 days of the data visualization advent calendar!",
+                task: `
+                    <div style="padding: 20px;">
+                        <h3 style="color: #800020; margin-bottom: 20px;">💝 You're awesome because:</h3>
+                        
+                        <p style="line-height: 1.8; margin-bottom: 20px;">
+                            📊 <strong>You practiced</strong> - that's the best way to learn<br>
+                            🎨 <strong>You experimented</strong> with different chart types and styles<br>
+                            💡 <strong>You thought critically</strong> about which visualizations work<br>
+                            🌈 <strong>You developed your taste</strong> in data visualization design<br>
+                            🐱 <strong>You are already unique</strong>
+                        </p>
+                        
+                        <h3 style="color: #800020; margin: 30px 0 15px 0;">🥂 Our wishes for 2025:</h3>
+                        
+                        <p style="line-height: 1.8; margin-bottom: 20px;">
+                            ✨ May your data always be clean and interesting<br>
+                            🎨 May your visualizations tell stories that inspire<br>
+                            🚀 May your projects find their audience<br>
+                            💪 May you have patience to work through complex datasets<br>
+                            🌟 May your portfolio grow with your skills<br>
+                            🎯 May each chart bring insights and joy
+                        </p>
+                        
+                        <p style="margin-top: 40px; font-size: 1.3em; font-weight: 700; color: #800020; text-align: center;">
+                            🎆 HAPPY NEW 2025! 🎆
+                        </p>
+                        
+                        <p style="text-align: center; font-style: italic; color: #555; margin-top: 20px;">
+                            P.S. Save all your visualizations from this calendar - in a year it will be interesting to see how much you've grown!
+                        </p>
+                    </div>
+                `,
+                tips: [
+                    "Do #MakeoverMonday or #TidyTuesday challenges",
+                    "Visualize your personal data (2025 is ahead!)",
+                    "Create a portfolio of your work",
+                    "Follow professional work: The Pudding, NY Times Graphics, Flowing Data",
+                    "Read books: \"Storytelling with Data\" (Cole Nussbaumer Knaflic)",
+                    "Experiment with new tools"
+                ],
+                bonus: "Happy New Year! 🎊🎄🥳"
+            }
+
+        ];
+
+        // Reset progress for fresh start
+        localStorage.removeItem('completedTasks');
+        let completedTasks = [];
+        
+        // Load or initialize viewedDays (don't reset - persist skip history)
+        let viewedDays = JSON.parse(localStorage.getItem('viewedDays')) || [];
+        let currentDay = null;
+
+        function getDayDate(dayNumber) {
+            // Simply return day number
+            return `Day ${dayNumber}`;
+        }
+
+        function isDayUnlocked(day) {
+            // Day 1 is always unlocked
+            if (day === 1) return true;
+            
+            // Other days unlock if previous day is completed OR viewed (for skip functionality)
+            return completedTasks.includes(day - 1) || viewedDays.includes(day - 1);
+        }
+        
+        function getNextAvailableDay() {
+            // Find first unlocked but not completed day
+            for (let i = 1; i <= tasks.length; i++) {
+                if (isDayUnlocked(i) && !completedTasks.includes(i)) {
+                    return i;
+                }
+            }
+            return null; // All completed
+        }
+
+        function initCalendar() {
+            const grid = document.getElementById('calendarGrid');
+            const nextDay = getNextAvailableDay();
+            
+            // Calculate current calendar day (1-15) based on today's date
+            const today = new Date();
+            const startDate = new Date(2024, 11, 17); // Dec 17, 2024
+            const diffTime = today - startDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const currentCalendarDay = diffDays + 1; // Day 1 = Dec 17
+            
+            tasks.forEach(task => {
+                const card = document.createElement('div');
+                const isUnlocked = isDayUnlocked(task.day);
+                const isCompleted = completedTasks.includes(task.day);
+                const isNext = task.day === nextDay && !isCompleted;
+                const isFuture = task.day > currentCalendarDay;
+                
+                let cardClasses = 'day-card';
+                if (isCompleted) cardClasses += ' completed';
+                else if (!isUnlocked) cardClasses += ' locked';
+                else if (isNext) cardClasses += ' next-available';
+                if (isFuture) cardClasses += ' future';
+                
+                card.className = cardClasses;
+                
+                if (isUnlocked) {
+                    card.onclick = () => openModal(task.day);
+                } else {
+                    card.onclick = () => showLockedMessage(task.day);
+                }
+                
+                // For unlocked days: show only title (no preview)
+                // For locked days: preview will be hidden by CSS anyway
+                card.innerHTML = `
+                    <div class="day-number">${getDayDate(task.day)}</div>
+                    <div class="day-title">${task.title}</div>
+                `;
+                
+                grid.appendChild(card);
+            });
+            updateProgress();
+        }
+        
+        function showLockedMessage(day) {
+            alert(`Day ${day} will be available after completing Day ${day - 1}! 🔒`);
+        }
+
+        function openModal(day) {
+            currentDay = day;
+            const task = tasks.find(t => t.day === day);
+            const modal = document.getElementById('modal');
+            
+            // Mark day as viewed
+            if (!viewedDays.includes(day)) {
+                viewedDays.push(day);
+                localStorage.setItem('viewedDays', JSON.stringify(viewedDays));
+            }
+            
+            document.getElementById('modalDayNumber').textContent = `Day ${day}`;
+            document.getElementById('modalTitle').textContent = task.title;
+            
+            const difficultyEl = document.getElementById('modalDifficulty');
+            if (task.difficulty === 'celebration') {
+                difficultyEl.textContent = '🎉 Celebration';
+                difficultyEl.className = 'difficulty celebration';
+                difficultyEl.style.background = 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)';
+                difficultyEl.style.color = '#800020';
+            } else if (task.difficulty === 'theory') {
+                difficultyEl.textContent = '💡 Theory';
+                difficultyEl.className = 'difficulty theory';
+                difficultyEl.style.background = 'linear-gradient(135deg, #4A6B7C 0%, #3A5B6C 100%)';
+                difficultyEl.style.color = 'white';
+            } else {
+                difficultyEl.textContent = task.difficulty === 'easy' ? 'Easy' : task.difficulty === 'medium' ? 'Medium' : 'Hard';
+                difficultyEl.className = 'difficulty ' + task.difficulty;
+                difficultyEl.style.background = '';
+                difficultyEl.style.color = '';
+            }
+            
+            let bodyHTML = '';
+            
+            if (task.difficulty === 'celebration') {
+                // Special layout for celebration day
+                bodyHTML = `
+                    <div class="task-section">
+                        ${task.task}
+                    </div>
+                    
+                    <div class="task-section">
+                        <h3>✨ Advice for the Future</h3>
+                        <ul>
+                            ${task.tips.map(tip => `<li>${tip}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            } else {
+                // Normal task layout
+                bodyHTML = `
+                    <div class="task-section">
+                        <p>${task.description}</p>
+                    </div>
+                    
+                    <div class="task-section">
+                        <h3>📋 Task</h3>
+                        <p>${task.task}</p>
+                    </div>
+                    
+                    <div class="task-section">
+                        <h3>💡 Tips</h3>
+                        <ul>
+                            ${task.tips.map(tip => `<li>${tip}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            if (task.experts) {
+                bodyHTML += `
+                    <div class="tips-box">
+                        <strong>🌟 Experts for Inspiration:</strong><br>${task.experts}
+                    </div>
+                `;
+            }
+            
+            if (task.bonus && task.difficulty !== 'celebration') {
+                bodyHTML += `
+                    <div class="tips-box">
+                        <strong>🌟 Bonus Challenge:</strong> ${task.bonus}
+                    </div>
+                `;
+            }
+            
+            // Add share prompt for non-celebration days
+            if (task.difficulty !== 'celebration') {
+                bodyHTML += `
+                    <div style="margin-top: 25px; padding: 15px; background: #FFF8F0; border-radius: 8px; border-left: 3px solid #086522;">
+                        <p style="margin: 0; font-size: 0.95em; color: #555;">
+                            📢 <strong>Finished the task?</strong> Share your result with the hashtag <strong style="color: #086522;">#DataVizAdvent2025</strong> — we would love to see your visualizations!
+                        </p>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('modalBody').innerHTML = bodyHTML;
+            
+            const completeBtn = document.getElementById('completeBtn');
+            const skipBtn = document.getElementById('skipBtn');
+            
+            if (task.difficulty === 'celebration') {
+                // Auto-complete celebration day and hide buttons
+                if (!completedTasks.includes(day)) {
+                    completedTasks.push(day);
+                    localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+                    // Update progress bar
+                    updateProgress();
+                }
+                completeBtn.style.display = 'none';
+                skipBtn.style.display = 'none';
+            } else {
+                completeBtn.style.display = 'block';
+                
+                // Show skip button only if not completed and not the last day
+                if (!completedTasks.includes(day) && day < 15) {
+                    skipBtn.style.display = 'block';
+                } else {
+                    skipBtn.style.display = 'none';
+                }
+                
+                if (completedTasks.includes(day)) {
+                    completeBtn.textContent = 'Completed 🎉';
+                    completeBtn.classList.add('completed');
+                } else {
+                    completeBtn.textContent = 'Mark as Complete';
+                    completeBtn.classList.remove('completed');
+                }
+            }
+            
+            modal.classList.add('active');
+            
+            // Scroll modal content to top
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.scrollTop = 0;
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        function toggleComplete() {
+            if (completedTasks.includes(currentDay)) {
+                completedTasks = completedTasks.filter(d => d !== currentDay);
+            } else {
+                completedTasks.push(currentDay);
+            }
+            localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+            
+            // Close modal
+            closeModal();
+            
+            // Refresh entire calendar to update locked/unlocked states
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = '';
+            initCalendar();
+        }
+
+        function skipDay() {
+            // Mark current day as viewed to unlock next day
+            if (!viewedDays.includes(currentDay)) {
+                viewedDays.push(currentDay);
+                localStorage.setItem('viewedDays', JSON.stringify(viewedDays));
+            }
+            
+            const nextDay = currentDay + 1;
+            closeModal();
+            
+            // Refresh calendar to update locked/unlocked states
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = '';
+            initCalendar();
+            
+            // Small delay to allow modal to close and calendar to refresh
+            setTimeout(() => {
+                if (nextDay <= 15) {
+                    openModal(nextDay);
+                }
+            }, 300);
+        }
+
+        function updateProgress() {
+            const completed = completedTasks.length;
+            const total = tasks.length;
+            const percentage = Math.round((completed / total) * 100);
+            
+            const progressFill = document.getElementById('progressFill');
+            progressFill.style.width = percentage + '%';
+            
+            // Hide percentage text when progress is 0
+            if (percentage === 0) {
+                progressFill.textContent = '';
+            } else {
+                progressFill.textContent = percentage + '%';
+            }
+            
+            document.getElementById('progressText').textContent = `Tasks completed: ${completed} out of ${total}`;
+        }
+
+        let resetClickCount = 0;
+        let resetTimeout = null;
+
+        function resetProgress() {
+            resetClickCount++;
+            
+            if (resetClickCount === 1) {
+                // First click - show warning
+                const btn = document.querySelector('.reset-progress-btn');
+                btn.textContent = '🔄 Click again to confirm';
+                btn.style.background = '#ffebee';
+                btn.style.borderColor = '#800020';
+                btn.style.color = '#800020';
+                
+                // Reset after 3 seconds
+                resetTimeout = setTimeout(() => {
+                    resetClickCount = 0;
+                    btn.textContent = '🔄 Reset Progress';
+                    btn.style.background = 'rgba(255, 255, 255, 0.9)';
+                    btn.style.borderColor = '#ddd';
+                    btn.style.color = '#666';
+                }, 3000);
+            } else {
+                // Second click - actually reset
+                clearTimeout(resetTimeout);
+                resetClickCount = 0;
+                
+                const btn = document.querySelector('.reset-progress-btn');
+                btn.textContent = '🔄 Reset Progress';
+                btn.style.background = 'rgba(255, 255, 255, 0.9)';
+                btn.style.borderColor = '#ddd';
+                btn.style.color = '#666';
+                
+                // Clear localStorage
+                localStorage.removeItem('completedTasks');
+                localStorage.removeItem('viewedDays');
+                
+                // Reset arrays - IMPORTANT: this updates the variables in memory
+                completedTasks.length = 0; // Clear array
+                viewedDays.length = 0; // Clear array
+                
+                // Close modal if open
+                closeModal();
+                
+                // Update progress display
+                updateProgress();
+                
+                // Reinitialize calendar - this will check isDayUnlocked for each day
+                const grid = document.getElementById('calendarGrid');
+                grid.innerHTML = '';
+                initCalendar();
+            }
+        }
+
+        // Close modal on outside click
+        document.getElementById('modal').onclick = function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        }
+
+        // Initialize calendar on load
+        initCalendar();
+    </script>
+</body>
+</html>

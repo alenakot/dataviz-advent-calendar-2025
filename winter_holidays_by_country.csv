@@ -1,0 +1,40 @@
+Country,Primary_Winter_Holiday,Date,Calendar_System,Religion_Culture,Holiday_Type,Notes
+United States,Christmas,December 25,Gregorian,Christian,Religious,"Federal holiday, also celebrates Hanukkah and Kwanzaa"
+United Kingdom,Christmas,December 25,Gregorian,Christian,Religious,Public holiday
+Canada,Christmas,December 25,Gregorian,Christian,Religious,Federal statutory holiday
+Australia,Christmas,December 25,Gregorian,Christian,Religious,Public holiday
+France,Christmas,December 25,Gregorian,Christian (Catholic),Religious,Public holiday
+Germany,Christmas,December 25-26,Gregorian,Christian,Religious,Two-day public holiday
+Italy,Christmas,December 25,Gregorian,Christian (Catholic),Religious,Public holiday
+Spain,Christmas,December 25,Gregorian,Christian (Catholic),Religious,Public holiday
+Russia,Orthodox Christmas,January 7,Julian,Christian (Orthodox),Religious,Public holiday
+Ukraine,Christmas,December 25 & January 7,Both,Christian,Religious,"Both dates recognized since 2017, officially moved to Dec 25 in 2022"
+Belarus,Orthodox Christmas,January 7,Julian,Christian (Orthodox),Religious,Public holiday
+Serbia,Orthodox Christmas,January 7,Julian,Christian (Orthodox),Religious,Public holiday
+Georgia,Orthodox Christmas,January 7,Julian,Christian (Orthodox),Religious,Public holiday
+Romania,Christmas,December 25,Revised Julian,Christian (Orthodox),Religious,Public holiday
+Greece,Christmas,December 25,Revised Julian,Christian (Orthodox),Religious,Public holiday
+Bulgaria,Christmas,December 25,Revised Julian,Christian (Orthodox),Religious,Public holiday
+Egypt,Orthodox Christmas,January 7,Julian,Christian (Coptic Orthodox),Religious,Public holiday since 2003
+Ethiopia,Orthodox Christmas (Gena),January 7,Julian,Christian (Orthodox),Religious,Public holiday
+Armenia,Christmas (Theophany),January 6,Gregorian,Christian (Armenian Apostolic),Religious,"Celebrates birth and baptism together, public holiday"
+Poland,Christmas,December 25-26,Gregorian,Christian (Catholic),Religious,Two-day public holiday
+Czech Republic,Christmas,December 25-26,Gregorian,Christian,Religious,Two-day public holiday
+Hungary,Christmas,December 25-26,Gregorian,Christian,Religious,Two-day public holiday
+Israel,Hanukkah,Variable (Kislev 25),Hebrew,Jewish,Religious,"8 days, dates change yearly (late Nov - late Dec)"
+Morocco,Eid al-Fitr / New Year,Variable / Jan 1,Islamic / Gregorian,Muslim / Secular,Religious / Secular,Celebrates Islamic holidays primarily
+Turkey,New Year,January 1,Gregorian,Secular (Muslim majority),Secular,Public holiday
+China,Chinese New Year,Variable (Jan-Feb),Lunar,Cultural,Cultural,"7-15 days, dates change yearly, Spring Festival"
+Taiwan,Chinese New Year,Variable (Jan-Feb),Lunar,Cultural,Cultural,7-15 days
+South Korea,New Year & Seollal,January 1 & Lunar New Year,Gregorian & Lunar,Cultural,Cultural / Secular,Celebrates both
+Japan,New Year (Shōgatsu),January 1-3,Gregorian,Cultural / Shinto,Cultural,Major holiday period
+India (Hindu),Diwali,Variable (Oct-Nov),Hindu,Hindu,Religious,"5 days, Festival of Lights, not winter but major"
+India (National),Republic Day,January 26,Gregorian,Secular,National,Public holiday
+Mexico,Christmas & Three Kings,December 25 & January 6,Gregorian,Christian (Catholic),Religious,Both are important
+Brazil,Christmas,December 25,Gregorian,Christian (Catholic),Religious,Public holiday
+Argentina,Christmas,December 25,Gregorian,Christian (Catholic),Religious,Public holiday (summer season)
+South Africa,Christmas,December 25,Gregorian,Christian,Religious,Public holiday (summer season)
+United States,Kwanzaa,December 26 - January 1,Gregorian,African American cultural,Cultural,"7 days, celebrates African heritage"
+United States,Hanukkah,Variable (8 days),Hebrew,Jewish,Religious,"Dates change yearly, celebrated by Jewish community"
+Global,New Year's Day,January 1,Gregorian,Secular,Secular,Celebrated worldwide
+Scotland,Hogmanay,December 31 - January 1,Gregorian,Cultural,Cultural,"New Year celebration, more important than Christmas traditionally"

@@ -1,0 +1,19 @@
+Category,Return_Rate_Percent,Boxing_Day_Sales_Billion_USD,Avg_Return_Timeframe_Days,Main_Return_Reason,Online_vs_Store_Percent_Online,Holiday_Season_Multiplier
+Clothing_Apparel,26,12.5,14,Size/Fit Issues,78,1.45
+Shoes,18,3.2,14,Size/Fit Issues,82,1.40
+Bags_Accessories,19,2.8,21,Style Mismatch,75,1.35
+Electronics,21,15.3,30,Technical Issues,65,1.25
+Toys_Games,15,4.1,14,Duplicate Gift,55,1.60
+Home_Improvement,11.5,2.9,21,Wrong Dimensions,68,1.20
+Kitchen_Appliances,8,1.7,30,Unmet Expectations,60,1.30
+Beauty_Personal_Care,4.3,1.2,14,Damaged/Defective,70,1.36
+Jewelry,6,0.9,30,Style Preference,45,1.15
+Fitness_Equipment,10,1.4,30,Buyer Remorse,72,1.50
+Home_Decor,5,0.8,14,Seasonal Item,50,1.40
+Books_Media,7,0.6,30,Duplicate Gift,62,1.10
+Auto_Parts,19.4,0.5,30,Wrong Model,80,1.05
+Furniture,15,2.1,45,Size/Appearance,70,1.08
+Sports_Equipment,9,1.3,30,Wrong Size,65,1.12
+Pet_Supplies,5.5,0.4,21,Unneeded,58,1.18
+Garden_Supplies,6,0.3,30,Seasonal,55,1.02
+Hobby_Supplies,6,0.4,30,Duplicate,60,1.08

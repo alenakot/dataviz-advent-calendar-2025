@@ -1,0 +1,50 @@
+Origin_Country,Destination_City,Destination_Country,Number_of_Countries_Choosing,Travel_Type
+24 countries worldwide,London,United Kingdom,24,International
+United States (19 states),Vienna,Austria,19,International  
+United States (13 states),Quebec City,Canada,13,International
+United States (6 states),Paris,France,6,International
+21 countries worldwide,Vienna,Austria,21,International
+6 countries worldwide,Prague,Czech Republic,6,International
+4 countries worldwide,Tokyo,Japan,4,International
+3 countries worldwide,New York,United States,3,International
+Spain,London,United Kingdom,1,International
+India,London,United Kingdom,1,International
+Russia,London,United Kingdom,1,International
+South Africa,London,United Kingdom,1,International
+Mexico,London,United Kingdom,1,International
+Canada,Vienna,Austria,1,International
+Australia,Vienna,Austria,1,International
+Saudi Arabia,Vienna,Austria,1,International
+United Kingdom,Prague,Czech Republic,1,International
+Germany,Prague,Czech Republic,1,International
+Taiwan,Shanghai,China,1,International
+Morocco,Paris,France,1,International
+Sweden,Copenhagen,Denmark,1,International
+United States,Orlando,United States,High,Domestic
+United States,Fort Lauderdale,United States,High,Domestic
+United States,Miami,United States,High,Domestic
+United States,Tampa,United States,High,Domestic
+United States,Las Vegas,United States,High,Domestic
+United States,New York,United States,High,Domestic
+United States,Honolulu,United States,High,Domestic
+United States,San Diego,United States,High,Domestic
+United States,Denver,United States,Medium,Domestic
+United States,Los Angeles,United States,Medium,Domestic
+United States,Phoenix,United States,Medium,Domestic
+United States,Oahu,United States,Medium,Domestic
+Europeans,Caribbean Islands,Various Caribbean,High,International
+Europeans,Tenerife,Spain,High,International
+Europeans,Dubai,United Arab Emirates,High,International
+Europeans,Bangkok,Thailand,High,International
+Asians (South Korea/Singapore/Hong Kong),Tokyo,Japan,Medium,International
+Japanese,Prague,Czech Republic,Medium,International
+Middle East (Jordan/Saudi Arabia/Kuwait),Vienna,Austria,Medium,International
+Middle East (Jordan/Saudi Arabia/Kuwait),London,United Kingdom,Medium,International
+Middle East (Jordan/Saudi Arabia/Kuwait),Prague,Czech Republic,Medium,International
+Latin America,London,United Kingdom,Medium,International
+Honduras/Uruguay/Chile,New York,United States,Medium,International
+Netherlands,Amsterdam,Netherlands,High,Domestic
+France/Luxembourg,Brussels,Belgium,High,Cross-border
+Global,Manila,Philippines,High (42% increase),International
+Global,Islamabad,Pakistan,High (21% increase),International
+Global,Marrakech,Morocco,High,International

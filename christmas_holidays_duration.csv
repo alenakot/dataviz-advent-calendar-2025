@@ -1,0 +1,33 @@
+Country,Region,Christmas_Break_Weeks,Christmas_Break_Days,Start_Date,End_Date,Additional_Winter_Break
+United Kingdom,Western Europe,2,14,Dec 20,Jan 6,Yes (1 week in Feb)
+France,Western Europe,2,14,Dec 20,Jan 4,Yes (2 weeks in Feb by zone)
+Germany,Western Europe,2,14,Varies by Land,Jan 4,Yes (1 week in Feb by Land)
+Ireland,Western Europe,2,14,Dec 20,Jan 4,Yes (1 week in Feb)
+Belgium,Western Europe,2,14,Dec 20,Jan 4,Yes (1 week in Feb)
+Netherlands,Western Europe,2,14,Dec 20,Jan 4,Yes (1 week in Feb by zone)
+Spain,Western Europe,2,14,Dec 23,Jan 7,No
+Portugal,Western Europe,2,14,Dec 17,Jan 4,Yes (4 days in Feb)
+Switzerland,Western Europe,2,14,Dec 20,Jan 4,Yes (1 week in Feb by canton)
+Italy,Southern Europe,2,14,Dec 24,Jan 6,Yes (1-5 days in Feb)
+Greece,Southern Europe,2,14,Dec 23,Jan 7,No
+Austria,Central Europe,2,14,Dec 23,Jan 6,Yes (1 week in Feb)
+Poland,Central Europe,2,14,Dec 23,Jan 7,Yes (2 weeks in Jan-Feb)
+Czech Republic,Central Europe,2,14,Dec 23,Jan 2,Yes (1 week in Feb)
+Hungary,Central Europe,2,14,Dec 22,Jan 3,No
+Sweden,Northern Europe,2,14,Dec 21,Jan 6,Yes (1 week in Feb/Mar - sportlov)
+Norway,Northern Europe,2,14,Dec 20,Jan 6,Yes (1 week in Feb)
+Denmark,Northern Europe,2,14,Dec 20,Jan 6,Yes (1 week in Feb)
+Finland,Northern Europe,2,14,Dec 21,Jan 7,Yes (1 week in Feb/Mar - ski week)
+United States,North America,2,14,Dec 20,Jan 3,No
+Canada,North America,2,14,Dec 20,Jan 3,No
+Russia,Eastern Europe,2,14,Dec 31,Jan 8,No
+Japan,Asia,2,14,Dec 26,Jan 6,No
+South Korea,Asia,3,21,Late-Dec,Mid-Jan,No
+Mexico,North America,2,14,Dec 20,Jan 6,No
+India,Asia,2,14,Dec 24,Jan 7,No
+Singapore,Asia,2,14,Mid-Dec,Early-Jan,No
+Thailand,Asia,2,14,Late-Dec,Early-Jan,No
+Turkey,Asia/Europe,2,14,Late-Dec,Early-Jan,No
+Egypt,Africa,2,14,Late-Dec,Early-Jan,No
+Morocco,Africa,2,14,Late-Dec,Early-Jan,No
+Colombia,South America,2,14,Mid-Dec,Mid-Jan,No
