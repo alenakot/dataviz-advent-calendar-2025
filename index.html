@@ -1273,58 +1273,41 @@
             document.getElementById('progressText').textContent = `Tasks completed: ${completed} out of ${total}`;
         }
 
-        let resetClickCount = 0;
-        let resetTimeout = null;
-
         function resetProgress() {
-            resetClickCount++;
+            // Clear localStorage
+            localStorage.removeItem('completedTasks');
+            localStorage.removeItem('viewedDays');
             
-            if (resetClickCount === 1) {
-                // First click - show warning
-                const btn = document.querySelector('.reset-progress-btn');
-                btn.textContent = '🔄 Click again to confirm';
-                btn.style.background = '#ffebee';
-                btn.style.borderColor = '#800020';
-                btn.style.color = '#800020';
-                
-                // Reset after 3 seconds
-                resetTimeout = setTimeout(() => {
-                    resetClickCount = 0;
-                    btn.textContent = '🔄 Reset Progress';
-                    btn.style.background = 'rgba(255, 255, 255, 0.9)';
-                    btn.style.borderColor = '#ddd';
-                    btn.style.color = '#666';
-                }, 3000);
-            } else {
-                // Second click - actually reset
-                clearTimeout(resetTimeout);
-                resetClickCount = 0;
-                
-                const btn = document.querySelector('.reset-progress-btn');
-                btn.textContent = '🔄 Reset Progress';
-                btn.style.background = 'rgba(255, 255, 255, 0.9)';
-                btn.style.borderColor = '#ddd';
-                btn.style.color = '#666';
-                
-                // Clear localStorage
-                localStorage.removeItem('completedTasks');
-                localStorage.removeItem('viewedDays');
-                
-                // Reset arrays - IMPORTANT: this updates the variables in memory
-                completedTasks.length = 0; // Clear array
-                viewedDays.length = 0; // Clear array
-                
-                // Close modal if open
-                closeModal();
-                
-                // Update progress display
-                updateProgress();
-                
-                // Reinitialize calendar - this will check isDayUnlocked for each day
-                const grid = document.getElementById('calendarGrid');
-                grid.innerHTML = '';
-                initCalendar();
-            }
+            // Reset arrays - IMPORTANT: this updates the variables in memory
+            completedTasks.length = 0; // Clear array
+            viewedDays.length = 0; // Clear array
+            
+            // Close modal if open
+            closeModal();
+            
+            // Update progress display
+            updateProgress();
+            
+            // Reinitialize calendar - this will check isDayUnlocked for each day
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = '';
+            initCalendar();
+            
+            // Visual feedback
+            const btn = document.querySelector('.reset-progress-btn');
+            const originalText = btn.textContent;
+            btn.textContent = '✅ Progress Reset!';
+            btn.style.background = '#e8f5e9';
+            btn.style.color = '#2e7d32';
+            btn.style.borderColor = '#2e7d32';
+            
+            // Reset button after 2 seconds
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.style.borderColor = '';
+            }, 2000);
         }
 
         // Close modal on outside click
