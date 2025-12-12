@@ -35,7 +35,7 @@
         header {
             text-align: center;
             color: white;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -49,6 +49,26 @@
             font-size: 1.2em;
             opacity: 0.95;
             font-weight: 400;
+        }
+
+        .author-line {
+            font-size: 0.95em;
+            opacity: 0.85;
+            font-weight: 300;
+            margin-top: 8px;
+            color: #666;
+        }
+
+        .author-link {
+            color: #800020;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        .author-link:hover {
+            text-decoration: underline;
+            opacity: 0.8;
         }
 
         .calendar-grid {
@@ -536,25 +556,26 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid #ddd;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            font-size: 0.85em;
+            font-size: 0.8em;
             color: #666;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             z-index: 1000;
-            font-weight: 500;
+            font-weight: 400;
         }
 
         .reset-progress-btn:hover {
-            background: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            color: #800020;
-            border-color: #800020;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            color: #444;
+            border-color: rgba(0, 0, 0, 0.15);
         }
+
     </style>
 </head>
 <body>
@@ -568,6 +589,7 @@
         <header>
             <h1>New Year Data Viz Calendar</h1>
             <p class="subtitle">🎄 15 Days Until New Year</p>
+            <p class="author-line">Created by <a href="https://www.linkedin.com/in/alena-kotovich-288806164/" target="_blank" class="author-link">Alyona Kotovich</a> with 💜</p>
         </header>
 
         <div class="progress-section">
@@ -604,10 +626,11 @@
             {
                 day: 1,
                 title: "🎵 Christmas & New Year Songs",
-                preview: "Create a bar chart of the top 10 most popular Christmas songs",
+                preview: "Visualize the top 10 most popular Christmas songs",
                 difficulty: "easy",
-                description: "Dataset: <a href='datasets/christmas_new_year_songs.csv' download>christmas_new_year_songs.csv</a> (30 songs). Create a bar chart showing the top 10 most popular Christmas songs by number of streams.",
-                task: "Visualize the top 10 songs by streams using a horizontal or vertical bar chart.",
+                task: "Visualize the top 10 most popular Christmas and New Year songs by number of streams.",
+                description: "Dataset: <a href='datasets/christmas_new_year_songs.csv' download>christmas_new_year_songs.csv</a> (30 songs)",
+                suggestedChart: "Bar chart (horizontal or vertical) works perfectly for comparing categories. Horizontal bars are better when labels are long.",
                 tips: [
                     "Horizontal vs vertical: If labels are long (song names, people's names) → use horizontal bar chart for better readability",
                     "Sorting matters: Always sort from highest to lowest (or vice versa), never leave in random order",
@@ -667,10 +690,11 @@
             {
                 day: 3,
                 title: "🍽️ Traditional Holiday Dishes",
-                preview: "Create a treemap of traditional holiday dishes from around the world",
+                preview: "Explore traditional holiday dishes from around the world",
                 difficulty: "medium",
-                description: "Dataset: <a href='datasets/traditional_holiday_dishes.csv' download>traditional_holiday_dishes.csv</a> (60 countries). Create a treemap showing traditional holiday dishes by country and region.",
-                task: "Visualize holiday food traditions from different countries using a treemap. Show hierarchy: Region → Country → Dish.",
+                task: "Visualize holiday food traditions from different countries, showing the hierarchy: Region → Country → Dish.",
+                description: "Dataset: <a href='datasets/traditional_holiday_dishes.csv' download>traditional_holiday_dishes.csv</a> (60 countries)",
+                suggestedChart: "Treemap is perfect for hierarchical data (boxes within boxes). It shows categories within categories beautifully.",
                 tips: [
                     "Treemap = boxes within boxes: Perfect for showing categories within categories (continents → countries → dishes)",
                     "Size matters: Make box size proportional to something meaningful (population, number of dishes, popularity)",
@@ -699,11 +723,8 @@
                     • <a href='https://colorbrewer2.org/' target='_blank'>ColorBrewer</a> - colorblind-safe palettes<br>
                     • <a href='https://coolors.co/' target='_blank'>Coolors.co</a> - palette generator<br>
                     • <a href='https://color.adobe.com/' target='_blank'>Adobe Color</a> - create palettes<br>
-                    • <a href='https://projects.susielu.com/viz-palette' target='_blank'>Viz Palette</a> - specifically for data viz<br><br>
-                    
-                    <strong>🌟 Experts for Inspiration:</strong><br>
-                    • <a href='https://flowingdata.com/' target='_blank'>Nathan Yau</a> - FlowingData, practical viz examples<br>
-                    • <a href='https://blog.datawrapper.de/colorguide/' target='_blank'>Lisa Charlotte Rost</a> - Datawrapper, "Your Friendly Guide to Colors"`,
+                    • <a href='https://projects.susielu.com/viz-palette' target='_blank'>Viz Palette</a> - specifically for data viz`,
+                experts: "• <a href='https://flowingdata.com/' target='_blank'>Nathan Yau</a> - FlowingData, practical viz examples<br>• <a href='https://blog.datawrapper.de/colorguide/' target='_blank'>Lisa Charlotte Rost</a> - Datawrapper, \"Your Friendly Guide to Colors\"",
                 tips: [
                     "Use ColorBrewer - all palettes are colorblind-safe",
                     "Check contrast on WebAIM Contrast Checker",
@@ -716,10 +737,11 @@
             {
                 day: 5,
                 title: "💰 American Holiday Spending",
-                preview: "Stacked area chart of Americans' gift spending",
+                preview: "Analyze Americans' gift spending over time",
                 difficulty: "medium",
-                description: "Dataset: <a href='https://data.world/makeovermonday/2022w52' target='_blank'>Average_holiday_Spending_by_Americans.xlsx</a> (2004-2021) on data.world. Create a stacked area chart or combination chart to show the evolution of Americans' gift spending by categories: Family, Friends, Coworkers, Other.",
-                task: "Visualize how Americans' holiday gift spending changed from 2004 to 2021. Show breakdown by recipient categories.",
+                task: "Visualize how Americans' holiday gift spending changed from 2004 to 2021. Show the breakdown by recipient categories (Family, Friends, Coworkers, Other).",
+                description: "Dataset: <a href='https://data.world/makeovermonday/2022w52' target='_blank'>Average_holiday_Spending_by_Americans.xlsx</a> (2004-2021) on data.world",
+                suggestedChart: "Stacked area chart works great for showing how parts change over time while maintaining the total. Or try a combination chart (lines + bars) to show parts AND whole.",
                 tips: [
                     "Stacked areas bottom to top: Place the most important/stable category at the bottom (near X-axis) - it's easier to read",
                     "Annotations = context: Add explanations for sharp changes in the chart (crisis, pandemic, new laws)",
@@ -727,7 +749,8 @@
                     "Trend lines: Add trend lines to show the overall direction through the noise",
                     "Color by importance: Highlight the most important category with a bright color, others - muted"
                 ],
-                bonus: "Insight to find: Family always ~75% of budget, even in crisis! Bonus: <a href='https://data.world/makeovermonday/2024w52-how-does-our-spending-change-in-december' target='_blank'>UK December Spending</a> for comparison.<br><br><strong>🌟 Experts for Inspiration:</strong><br>• <a href='https://www.edwardtufte.com/' target='_blank'>Edward Tufte</a> - data viz pioneer, \"data-ink ratio\"<br>• <a href='https://www.cs.ubc.ca/~tmm/' target='_blank'>Tamara Munzner</a> - \"Visualization Analysis and Design\"<br>• <a href='http://www.thefunctionalart.com/' target='_blank'>Alberto Cairo</a> - \"The Truthful Art\", \"How Charts Lie\""
+                experts: "• <a href='https://www.edwardtufte.com/' target='_blank'>Edward Tufte</a> - data viz pioneer, \"data-ink ratio\"<br>• <a href='https://www.cs.ubc.ca/~tmm/' target='_blank'>Tamara Munzner</a> - \"Visualization Analysis and Design\"<br>• <a href='http://www.thefunctionalart.com/' target='_blank'>Alberto Cairo</a> - \"The Truthful Art\", \"How Charts Lie\"",
+                bonus: "Insight to find: Family always ~75% of budget, even in crisis! Bonus: <a href='https://data.world/makeovermonday/2024w52-how-does-our-spending-change-in-december' target='_blank'>UK December Spending</a> for comparison."
             },
             {
                 day: 6,
@@ -735,7 +758,7 @@
                 preview: "Hand-drawn visualization of personal data",
                 difficulty: "medium",
                 description: "Dear Data - a project by two designers (Giorgia Lupi & Stefanie Posavec) who spent a year sending each other postcards with hand-drawn visualizations of their personal data.",
-                task: `Collect data about your day (Dec 17-22):<br>
+                task: `Collect data about your day for 5-6 days:<br>
                     • How many times did you smile?<br>
                     • How many cups of coffee/tea did you drink?<br>
                     • How much time on social media?<br>
@@ -764,23 +787,6 @@
             },
             {
                 day: 7,
-                title: "🌡️ New Year Temperatures",
-                preview: "Heatmap of average temperatures on New Year's Day",
-                difficulty: "medium",
-                description: "Dataset: <a href='datasets/new_year_temperatures.csv' download>new_year_temperatures.csv</a> (50 cities). Create a heatmap showing average temperatures on January 1st across different cities.",
-                task: "Visualize temperatures on New Year's Day for 50 cities around the world. Show geographical patterns.",
-                tips: [
-                    "Heatmap colors: Use a sequential palette (one color, varying intensity) for one dimension",
-                    "Diverging for temperatures: Blue (cold) ← White (0°C) → Red (hot) - intuitively clear",
-                    "Geographic data = maps: If you have coordinates, use a map instead of a table - patterns are instantly visible",
-                    "Sort heatmap: Sort rows/columns to make patterns visible (by geography, by temperature)",
-                    "Don't forget the legend: For heatmaps, a legend is critical - without it, colors mean nothing"
-                ],
-                experts: "• <a href='https://www.storytellingwithdata.com/' target='_blank'>Cole Nussbaumer Knaflic</a> - Storytelling with Data<br>• <a href='https://www.visualisingdata.com/' target='_blank'>Andy Kirk</a> - Visualising Data<br>• <a href='https://policyviz.com/' target='_blank'>Jon Schwabish</a> - PolicyViz podcast<br>• <a href='https://www.linkedin.com/in/nastengraph/' target='_blank'>Anastasiya Kuznetsova</a> - Tableau & BI dashboards",
-                bonus: "Try showing temperature changes over years - is there a warming trend? Want data for your city? Use <a href='https://en.climate-data.org/' target='_blank'>Climate-Data.org</a>."
-            },
-            {
-                day: 8,
                 title: "🔍 Theory: Where to Find Data",
                 preview: "Data sources for your projects",
                 difficulty: "theory",
@@ -819,6 +825,24 @@
                 bonus: "Find a dataset on a topic you're interested in and create a simple bar or line chart. Want to explore Google Trends? Here's an example with holiday dishes: <a href='https://trends.google.com/trends/explore?date=today%205-y&q=Turkey%20Soup,Mashed%20Potatoes,Hot%20Chocolate,olivier%20salad' target='_blank'>Holiday food trends</a>"
             },
             {
+                day: 8,
+                title: "🌡️ New Year Temperatures",
+                preview: "Analyze temperatures on New Year's Day around the world",
+                difficulty: "medium",
+                task: "Visualize temperatures on New Year's Day for 50 cities around the world. Show geographical patterns.",
+                description: "Dataset: <a href='datasets/new_year_temperatures.csv' download>new_year_temperatures.csv</a> (50 cities)",
+                suggestedChart: "Heatmap is perfect for showing patterns in a grid. Or use a map visualization if you have coordinates - patterns become instantly visible!",
+                tips: [
+                    "Heatmap colors: Use a sequential palette (one color, varying intensity) for one dimension",
+                    "Diverging for temperatures: Blue (cold) ← White (0°C) → Red (hot) - intuitively clear",
+                    "Geographic data can be maps: If you have coordinates, visualize on a map - geographic patterns become instantly visible",
+                    "Sort heatmap: Sort rows/columns to make patterns visible (by geography, by temperature)",
+                    "Don't forget the legend: For heatmaps, a legend is critical - without it, colors mean nothing"
+                ],
+                experts: "• <a href='https://www.storytellingwithdata.com/' target='_blank'>Cole Nussbaumer Knaflic</a> - Storytelling with Data<br>• <a href='https://www.visualisingdata.com/' target='_blank'>Andy Kirk</a> - Visualising Data<br>• <a href='https://policyviz.com/' target='_blank'>Jon Schwabish</a> - PolicyViz podcast<br>• <a href='https://www.linkedin.com/in/nastengraph/' target='_blank'>Anastasiya Kuznetsova</a> - Tableau & BI dashboards",
+                bonus: "Try showing temperature changes over years - is there a warming trend? Want data for your city? Use <a href='https://en.climate-data.org/' target='_blank'>Climate-Data.org</a>."
+            },
+            {
                 day: 9,
                 title: "📰 Theory: Infographics",
                 preview: "What makes a good infographic?",
@@ -851,10 +875,11 @@
             {
                 day: 10,
                 title: "🎬 Christmas Movies Ratings",
-                preview: "Scatter plot: IMDb vs audience ratings",
+                preview: "Compare critic and audience ratings for Christmas movies",
                 difficulty: "medium",
-                description: "Dataset: <a href='datasets/christmas_movies_ratings.csv' download>christmas_movies_ratings.csv</a> (50 movies). Create a scatter plot comparing IMDb ratings with audience scores.",
                 task: "Visualize the relationship between critic ratings (IMDb) and audience ratings for Christmas movies. Are they correlated?",
+                description: "Dataset: <a href='datasets/christmas_movies_ratings.csv' download>christmas_movies_ratings.csv</a> (50 movies)",
+                suggestedChart: "Scatter plot is perfect for exploring relationships between two variables. Each dot represents one movie!",
                 tips: [
                     "Scatter plot = looking for relationships: Each point is one observation (movie, person, country)",
                     "Trend line helps: Add a linear trend line to show if there's correlation",
@@ -867,10 +892,11 @@
             {
                 day: 11,
                 title: "🛷 Holiday Activities Popularity",
-                preview: "Dot plot or lollipop chart for comparing activities",
+                preview: "Compare the popularity of different holiday activities",
                 difficulty: "easy",
-                description: "Dataset: <a href='datasets/holiday_activities.csv' download>holiday_activities.csv</a> (20 activities). Create a dot plot or lollipop chart showing popularity of different holiday activities.",
-                task: "Visualize which holiday activities are most popular. Compare across age groups or countries.",
+                task: "Visualize which holiday activities are most popular. Compare across age groups or countries if data allows.",
+                description: "Dataset: <a href='datasets/holiday_activities.csv' download>holiday_activities.csv</a> (20 activities)",
+                suggestedChart: "Dot plot or lollipop chart - cleaner alternatives to bar charts that reduce visual clutter while comparing values.",
                 tips: [
                     "Dot plot = cleaner alternative to bar chart: Use when you want to reduce visual clutter",
                     "Lollipop chart = dot plot with stems: Looks modern and saves ink/pixels",
@@ -883,10 +909,11 @@
             {
                 day: 12,
                 title: "🎁 Gift Exchange Network",
-                preview: "Network diagram or chord diagram",
+                preview: "Visualize the flow of gifts between people",
                 difficulty: "hard",
-                description: "Dataset: <a href='datasets/gift_exchange.csv' download>gift_exchange.csv</a> (family gift exchange data). Create a network diagram showing who gives gifts to whom.",
-                task: "Visualize gift exchange relationships in a family or friend group. Show the flow of gifts.",
+                task: "Visualize gift exchange relationships in a family or friend group. Show who gives gifts to whom.",
+                description: "Dataset: <a href='datasets/gift_exchange.csv' download>gift_exchange.csv</a> (family gift exchange data)",
+                suggestedChart: "Network diagram (or chord diagram) shows relationships and connections beautifully. Perfect for 'who connects to whom' questions!",
                 tips: [
                     "Network viz = connections matter: Use when relationships between items are important",
                     "Node size = importance: Make nodes bigger based on number of connections",
@@ -929,10 +956,11 @@
             {
                 day: 14,
                 title: "🎵 Music Playlist Analysis",
-                preview: "Multi-chart dashboard combining different viz types",
+                preview: "Create a comprehensive multi-chart dashboard",
                 difficulty: "hard",
-                description: "Dataset: <a href='https://www.youtube.com/watch?v=aAkMkVFwAoo&list=PLw-VjHDlEOgs658kAHR_LAaILBXb-s6Q5' target='_blank'>YouTube Playlist</a> with holiday songs. Analyze and create a dashboard with multiple charts.",
-                task: "Create a comprehensive dashboard analyzing the holiday playlist. Include: 1) Songs by decade (bar), 2) Duration distribution (histogram), 3) Artist frequency (treemap or bar), 4) Your favorite songs (highlight).",
+                task: "Create a comprehensive dashboard analyzing a holiday playlist. Tell the complete story of the music collection through multiple views.",
+                description: "Dataset: <a href='https://www.youtube.com/watch?v=aAkMkVFwAoo&list=PLw-VjHDlEOgs658kAHR_LAaILBXb-s6Q5' target='_blank'>YouTube Playlist</a> with holiday songs (or use your own playlist data)",
+                suggestedChart: "Dashboard with multiple chart types! Try combining: bar chart (songs by decade), histogram (duration distribution), treemap (artist frequency), and highlights for favorites. Mix and match!",
                 tips: [
                     "Dashboard = multiple views: Combine different chart types to tell a complete story",
                     "Consistent design: Use the same colors, fonts, and style across all charts",
@@ -960,7 +988,7 @@
                             🐱 <strong>You are already unique</strong>
                         </p>
                         
-                        <h3 style="color: #800020; margin: 30px 0 15px 0;">🥂 Our wishes for 2025:</h3>
+                        <h3 style="color: #800020; margin: 30px 0 15px 0;">🥂 Our wishes for 2026:</h3>
                         
                         <p style="line-height: 1.8; margin-bottom: 20px;">
                             ✨ May your data always be clean and interesting<br>
@@ -972,17 +1000,31 @@
                         </p>
                         
                         <p style="margin-top: 40px; font-size: 1.3em; font-weight: 700; color: #800020; text-align: center;">
-                            🎆 HAPPY NEW 2025! 🎆
+                            🎆 HAPPY NEW 2026! 🎆
                         </p>
                         
                         <p style="text-align: center; font-style: italic; color: #555; margin-top: 20px;">
                             P.S. Save all your visualizations from this calendar - in a year it will be interesting to see how much you've grown!
                         </p>
+                        
+                        <div style="margin-top: 40px; padding: 25px; background: linear-gradient(135deg, #FFF8F0 0%, #FFF0E0 100%); border-radius: 12px; border-left: 4px solid #800020;">
+                            <h3 style="color: #800020; margin-bottom: 15px; font-size: 1.1em;">💬 I'd love to hear from you!</h3>
+                            <p style="line-height: 1.8; color: #555; margin-bottom: 15px;">
+                                Your feedback helps me create better learning materials. Share your thoughts about this calendar:
+                            </p>
+                            <p style="line-height: 1.8; color: #555;">
+                                📱 <strong>Telegram:</strong> <a href="https://t.me/alyona_kot" target="_blank" style="color: #800020; text-decoration: none; border-bottom: 1px dotted #800020;">@alyona_kot</a><br>
+                                💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alena-kotovich-288806164/" target="_blank" style="color: #800020; text-decoration: none; border-bottom: 1px dotted #800020;">Alyona Kotovich</a>
+                            </p>
+                            <p style="margin-top: 15px; font-size: 0.95em; color: #666; font-style: italic;">
+                                What did you like? What could be improved? Which day was your favorite?
+                            </p>
+                        </div>
                     </div>
                 `,
                 tips: [
                     "Do #MakeoverMonday or #TidyTuesday challenges",
-                    "Visualize your personal data (2025 is ahead!)",
+                    "Visualize your personal data (2026 is ahead!)",
                     "Create a portfolio of your work",
                     "Follow professional work: The Pudding, NY Times Graphics, Flowing Data",
                     "Read books: \"Storytelling with Data\" (Cole Nussbaumer Knaflic)",
@@ -1124,14 +1166,26 @@
                 // Normal task layout
                 bodyHTML = `
                     <div class="task-section">
-                        <p>${task.description}</p>
-                    </div>
-                    
-                    <div class="task-section">
                         <h3>📋 Task</h3>
                         <p>${task.task}</p>
                     </div>
                     
+                    <div class="task-section">
+                        <p>${task.description}</p>
+                    </div>
+                `;
+                
+                // Add suggested chart if exists
+                if (task.suggestedChart) {
+                    bodyHTML += `
+                        <div class="task-section">
+                            <h3>📊 Suggested Chart</h3>
+                            <p>${task.suggestedChart}</p>
+                        </div>
+                    `;
+                }
+                
+                bodyHTML += `
                     <div class="task-section">
                         <h3>💡 Tips</h3>
                         <ul>
